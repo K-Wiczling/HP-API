@@ -1,0 +1,28 @@
+#card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.card {
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    overflow-y: hidden;
+    
+}
+.card-btn{
+    margin-top: 1%;
+    width: 200px;
+    margin-left: 50px;
+}
+.card-image{
+    margin-left: 50px;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.card-p{
+    width: 100%;
+    text-align: center;
+}

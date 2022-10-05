@@ -15,36 +15,75 @@
                 <a href="index.html">Harry Potter API</a>
             </div>
             <menu>
-                <button id="all-students" class="main-buttons" >All Students</button>
-                <button id="gryffindor" class="main-buttons" >Gryffindor</button>
-                <button id="slytherin" class="main-buttons" >Slytherin</button>
-                <button id="hufflepuff" class="main-buttons" >Hufflepuff</button>
-                <button id="ravenclaw" class="main-buttons" >Ravenclaw</button>
-                <a href="html/favorites.html"><button id="favorites" class="main-buttons" >Favorites</button></a>
+                <button id="all-students" class="fetch-buttons" >All Students</button>
+                <button id="gryffindor" class="fetch-buttons" >Gryffindor</button>
+                <button id="slytherin" class="fetch-buttons" >Slytherin</button>
+                <button id="hufflepuff" class="fetch-buttons" >Hufflepuff</button>
+                <button id="ravenclaw" class="fetch-buttons" >Ravenclaw</button>
+                <a href="favorites/favorites.html"><button id="favorites" class="main-buttons" >Favorites</button></a>
             </menu>
         </header>
         <main id="main">
-            <table >
-                <thead> 
-                    <tr>
-                        <td>Name</td>
-                        <td>Date of birth</td>
-                        <td>House</td>
-                        <td>Wizard</td>
-                        <td>Ancestry</td>
-                        <td>Is student</td>
-                    </tr>
-                </thead>
-                <tbody id="studentsTable"></tbody>
-            </table>
-        </main>
-        <footer id="footer">
+            <div >
 
-        </footer>
+            </div>
+            <div id="table-container">
+                <div id="sort-container">
+                    <div class="sorting-input">
+                        Sorting column:
+                        <select name="sorting-column" id="sorting-column">
+                            <option value="Name">Name </option>
+                            <option value="DateofBirth">Date of Birth</option>
+                            <option value="House">House</option>
+                        </select>
+                    </div>
+                    <div class="sorting-input">
+                        Sorting type:
+                        <select name="sorting-direction" id="sorting-type">
+                            <option value="Ascending">Ascending</option>
+                            <option value="Descending">Descending</option>
+                        </select>
+                    </div>
+                    <button id="sort-btn">Sort</button>
+                </div>
+                <table >
+                    <thead> 
+                        <tr>
+                            <td>Name</td>
+                            <td>Date of birth</td>
+                            <td>House</td>
+                            <td>Wizard</td>
+                            <td>Ancestry</td>
+                            <td>Is student</td>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable"></tbody>
+                </table>
+            </div>
+            <footer id="footer">
+                Created by Karol Wiczling for Profil Software 
+            </footer>
+        </main>
     </div>
+    <div id="modal">
+        <div id="student-data">
+            <div id="modal-name">Name:  </div>
+            <div id="modal-birth">Date of birth: </div>
+            <div id="modal-house">House: </div>
+            <button onclick="toggleModal()">Close</button>
+            <button onclick="addToFavorite()">Add Favorite</button>
+
+        </div>
+        <div id="student-img">
+            <img id="modal-img" >
+        </div>
+    </div>
+    <script src="scripts/global.js"></script>
     <script src="scripts/api.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/domManipulation.js"></script>
+    <script src="scripts/storageMenager.js"></script>
+    <script src="scripts/table.js"></script>
+    <script src="scripts/helper.js"></script>
+    <script src="scripts/sorting.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

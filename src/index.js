@@ -9,7 +9,6 @@ async function init () {
             favoriteStudents.push(getSingleStudentObject(student))
         }
     }
-    console.log(favoriteStudents);
 }
 
 init();

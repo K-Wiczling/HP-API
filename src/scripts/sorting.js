@@ -16,14 +16,28 @@ const compareHouse = (a, b) => {
     return 0;
 }
 const compareBirth = (a, b) => {
-    return a.dateOfBirth - b.dateOfBirth
+    a = a.split('-');
+    b = b.split('-');
+    a = a.map(x => Number(x))
+    b = b.map(x => Number(x))
+  
+    if((a[2] - b[2]) !== 0){
+        return a[2] - b[2];
+    } else if ((a[1] - b[1]) !== 0){
+        return a[1] - b[1];
+    } else if ((a[0] - b[0]) !== 0){
+        return a[0] - b[0];
+    } else 
+        return 0;
+
 }
 const sortBy = () => {
     const column = sortingColumn[sortingColumnInput.selectedIndex];
     const type = sortingType[sortingTypeInput.selectedIndex];
+    console.log(type, column);
     sorting(type, column);
     
-    insertTable(createTable(shown));
+    insertTable(createTable(shownStudents));
     updateTable();
 }
 
@@ -31,34 +45,34 @@ const sorting = (type, column) => {
 
     if (type === 'Ascending') {
         if (column === 'Name') {
-            shown.sort((a, b) => { 
+            shownStudents.sort((a, b) => { 
                 return compareName (a, b);
             });
         }
         if (column === 'DateOfBirth') {
-            shown.sort((a, b) => { 
-                return compareBirth (a, b);
+            shownStudents.sort((a, b) => { 
+                return compareBirth (a.dateOfBirth, b.dateOfBirth);
             });
         }
         if (column === 'House') {
-            shown.sort((a, b) => { 
+            shownStudents.sort((a, b) => { 
                 return compareHouse (a, b);
             });
         }
     } else if(type === 'Descending') {
         
         if (column === 'Name') {
-            shown.reverse((a, b) => { 
+            shownStudents.reverse((a, b) => { 
                 return compareName (a, b);
             });
         }
         if (column === 'DateOfBirth') {
-            shown.reverse((a, b) => { 
+            shownStudents.reverse((a, b) => { 
                 return compareBirth (a, b);
             });
         }
         if (column === 'House') {
-            shown.reverse((a, b) => { 
+            shownStudents.reverse((a, b) => { 
                 return compareHouse (a, b);
             });
         }

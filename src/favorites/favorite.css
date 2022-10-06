@@ -1,28 +1,29 @@
 #card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    justify-items: center;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr ;
 }
 .card {
     border: 1px solid black;
-    width: 300px;
-    height: 300px;
-    overflow-y: hidden;
-    
+    width: 95%;
+    padding-bottom: 10%;
+    background-color: var(--darker);
 }
 .card-btn{
-    margin-top: 1%;
-    width: 200px;
-    margin-left: 50px;
+    margin-top: 10px;
+    width: 70%;
+    margin-left: 15%;
 }
 .card-image{
-    margin-left: 50px;
-    width: 200px;
-    height: 250px;
+    width: 70%;
+    margin-left: 15%;
     object-fit: cover;
     object-position: 0 0;
 }
 
-.card-p{
+.card h3{
+    font-size: 2rem;
     width: 100%;
     text-align: center;
 }

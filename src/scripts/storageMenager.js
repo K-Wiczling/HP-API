@@ -9,8 +9,6 @@ const updateFavorite = () => {
     } else {
         favoriteStudents.map((student, index ) => {
             if(index === 0){
-                console.log(student);
-
                 favorite = `${student.name}`
             }
             else

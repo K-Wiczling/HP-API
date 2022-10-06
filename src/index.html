@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <title>Harry Potter - API app</title>
 
 </head>
@@ -12,9 +13,21 @@
     <div class="container">
         <header>
             <div id="logo">
-                <a href="index.html">Harry Potter API</a>
+                <a href="index.html">
+                    <img id="logo-img" src="./images/logo.png">
+                </a>
             </div>
-            <menu>
+            <menu id="navbar">
+                <button id="all-students" class="fetch-buttons" >All Students</button>
+                <button id="gryffindor" class="fetch-buttons" >Gryffindor</button>
+                <button id="slytherin" class="fetch-buttons" >Slytherin</button>
+                <button id="hufflepuff" class="fetch-buttons" >Hufflepuff</button>
+                <button id="ravenclaw" class="fetch-buttons" >Ravenclaw</button>
+                <a href="favorites/favorites.html"><button id="favorites" class="main-buttons" >Favorites</button></a>
+            </menu>
+            
+            <svg id="hamburger" fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/></svg>
+            <menu id="popup-menu">
                 <button id="all-students" class="fetch-buttons" >All Students</button>
                 <button id="gryffindor" class="fetch-buttons" >Gryffindor</button>
                 <button id="slytherin" class="fetch-buttons" >Slytherin</button>
@@ -48,13 +61,13 @@
                 </div>
                 <table >
                     <thead> 
-                        <tr>
-                            <td>Name</td>
-                            <td>Date of birth</td>
-                            <td>House</td>
-                            <td>Wizard</td>
-                            <td>Ancestry</td>
-                            <td>Is student</td>
+                        <tr id="first">
+                            <th>Name</th>
+                            <th>Date of birth</th>
+                            <th>House</th>
+                            <th>Wizard</th>
+                            <th>Ancestry</th>
+                            <th>Is student</th>
                         </tr>
                     </thead>
                     <tbody id="studentsTable"></tbody>
@@ -66,17 +79,19 @@
         </main>
     </div>
     <div id="modal">
+        <svg id="close-modal" onclick="toggleModal()" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="45px" height="45px"><path d="M25.707,6.293c-0.195-0.195-1.805-1.805-2-2c-0.391-0.391-1.024-0.391-1.414,0c-0.195,0.195-17.805,17.805-18,18c-0.391,0.391-0.391,1.024,0,1.414c0.279,0.279,1.721,1.721,2,2c0.391,0.391,1.024,0.391,1.414,0c0.195-0.195,17.805-17.805,18-18C26.098,7.317,26.098,6.683,25.707,6.293z"/><path d="M23.707,25.707c0.195-0.195,1.805-1.805,2-2c0.391-0.391,0.391-1.024,0-1.414c-0.195-0.195-17.805-17.805-18-18c-0.391-0.391-1.024-0.391-1.414,0c-0.279,0.279-1.721,1.721-2,2c-0.391,0.391-0.391,1.024,0,1.414c0.195,0.195,17.805,17.805,18,18C22.683,26.098,23.317,26.098,23.707,25.707z"/></svg>
         <div id="student-data">
-            <div id="modal-name">Name:  </div>
-            <div id="modal-birth">Date of birth: </div>
-            <div id="modal-house">House: </div>
-            <button onclick="toggleModal()">Close</button>
+            <div id="personal-data">
+                <p>Personal Info</p>
+                <div id="modal-name">Name:  </div>
+                <div id="modal-birth">Date of birth: </div>
+                <div id="modal-house">House: </div>
+            </div>
+                <img id="modal-img" >
             <button onclick="addToFavorite()">Add Favorite</button>
-
+            <button onclick="removeFromFavorite()">Remove Favorite</button>
         </div>
-        <div id="student-img">
-            <img id="modal-img" >
-        </div>
+        
     </div>
     <script src="scripts/global.js"></script>
     <script src="scripts/api.js"></script>

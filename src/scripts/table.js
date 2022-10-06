@@ -1,7 +1,7 @@
 // Create single row of table 
-const createRow = (id, {name, dateOfBirth, house, wizard, ancestry, hogwartsStudent}) => {
+const createRow = (id, clas, {name, dateOfBirth, house, wizard, ancestry, hogwartsStudent}) => {
     const row = `
-        <tr id="${id}">
+        <tr id="${id}" class="${clas}">
             <td>${name}</td>
             <td>${dateOfBirth}</td>
             <td>${house}</td>
@@ -17,7 +17,9 @@ const createRow = (id, {name, dateOfBirth, house, wizard, ancestry, hogwartsStud
 const createTable = (students) => {
     tab = '';
     students.map((student, index) => {
-        tab += createRow(index, student);
+        let clas = 'alt1';
+        if (index % 2 === 1) clas = 'alt2' 
+        tab += createRow(index, clas, student);
     });
     return tab;
 }
@@ -33,6 +35,7 @@ const updateTable = () => {
     // All table rows
     const tableRows = document.getElementsByTagName("tr");
     for (const row of tableRows) {
-        row.addEventListener('click', showSingleStudent)
+        if (row.id !== 'first')
+            row.addEventListener('click', showSingleStudent)
     }
 }

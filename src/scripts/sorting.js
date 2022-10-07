@@ -16,12 +16,20 @@ const compareHouse = (a, b) => {
     return 0;
 }
 const compareBirth = (a, b) => {
-    a = a.split('-');
-    b = b.split('-');
-    a = a.map(x => Number(x))
-    b = b.map(x => Number(x))
-  
-    if((a[2] - b[2]) !== 0){
+    if (a === ''){
+        a = [0,0,9999];
+    } else {
+        a = a.split('-');
+        a = a.map(x => Number(x))
+    }
+    if (b === '') {
+        b = [0,0,9999];
+    } else {
+            b = b.split('-');
+            b = b.map(x => Number(x))
+    }
+    // console.log('a: ' + a, 'b: ' + b);
+    if ((a[2] - b[2]) !== 0){
         return a[2] - b[2];
     } else if ((a[1] - b[1]) !== 0){
         return a[1] - b[1];
@@ -62,19 +70,22 @@ const sorting = (type, column) => {
     } else if(type === 'Descending') {
         
         if (column === 'Name') {
-            shownStudents.reverse((a, b) => { 
+            shownStudents.sort((a, b) => { 
                 return compareName (a, b);
             });
+            shownStudents.reverse();
         }
         if (column === 'DateOfBirth') {
-            shownStudents.reverse((a, b) => { 
-                return compareBirth (a, b);
+            shownStudents.sort((a, b) => { 
+                return compareBirth (a.dateOfBirth, b.dateOfBirth);
             });
+            shownStudents.reverse();
         }
         if (column === 'House') {
-            shownStudents.reverse((a, b) => { 
+            shownStudents.sort((a, b) => { 
                 return compareHouse (a, b);
             });
+            shownStudents.reverse();
         }
        
     }

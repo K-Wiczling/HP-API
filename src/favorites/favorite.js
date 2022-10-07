@@ -1,5 +1,6 @@
 const cardContainer = document.getElementById('card-container');
 const cardRange = document.getElementById('range');
+
 cardRange.addEventListener( 'change', (e) => {
     cardContainer.style.gridTemplateColumns = `repeat(${e.target.value}, 1fr)`;
 } )
@@ -19,11 +20,10 @@ async function init () {
     drawCards();
 }
 const drawCards = () => {
-    let html = '';
+    cardContainer.innerHTML = '';
     for (const student of favoriteStudents) {
-        html += card(student.name, student.image);
+        cardContainer.appendChild(card(student.name, student.image));
     }
-    cardContainer.innerHTML = html;
 
 }
 const removeFromFavorite = (name) => {

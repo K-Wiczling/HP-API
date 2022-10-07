@@ -6,10 +6,12 @@ const modalhouse = document.getElementById('modal-house');
 const modalImg= document.getElementById('modal-img');
 
 
-const showSingleStudent = (e) => {
-    const singleStudentName = e.path[1].cells[0].innerText
+const showSingleStudent = (name) => {
+    // console.log(e);
+    // const singleStudentName = e.path[1].children[0].innerHTML;
+    // // console.log(singleStudentName);
     toggleModal();
-    const student = getSingleStudentObject(singleStudentName);
+    const student = getSingleStudentObject(name);
     currentStudent = student;
     modalName.innerHTML = `Name: ${student.name}`; 
     modalBirth.innerHTML = `Date of birth: ${student.dateOfBirth}`;
@@ -56,8 +58,6 @@ async function showStudents (e) {
 
     const tab = createTable(await students);
     shownStudents = students;
-    insertTable(tab);
-    updateTable();
 }   
 
 // Buttons to select specific students

@@ -9,8 +9,6 @@
     border-radius: 20px;
     width: 90%;
     height: 90%;
-    max-width: ;
-    max-height: ;
     padding-bottom: 10%;
     background-color: var(--darker);
     transition: width 0.4s, height 0.4s;

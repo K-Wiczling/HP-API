@@ -1,6 +1,8 @@
+
 const sortingColumn = ['Name', 'DateOfBirth', 'House' ];
 const sortingType = ['Ascending', 'Descending' ];
 
+// Compare functions for the sorting 
 const compareName = (a, b) => {
     let x = a.name.toLowerCase();
     let y = b.name.toLowerCase();
@@ -38,16 +40,20 @@ const compareBirth = (a, b) => {
         return 0;
 
 }
+
+// Choose sorting column and type based on input elemets value
 const sortBy = () => {
     const column = sortingColumn[sortingColumnInput.selectedIndex];
     const type = sortingType[sortingTypeInput.selectedIndex];
-    console.log(type, column);
+
+    // Sort table
     sorting(type, column);
     
-    insertTable(createTable(shownStudents));
-    updateTable();
+    // Redraw table
+    createTable(shownStudents);
 }
 
+// Sorts table 
 const sorting = (type, column) => {
 
     if (type === 'Ascending') {
@@ -90,13 +96,12 @@ const sorting = (type, column) => {
     }
 
 }
-//Sorting column
-const sortingColumnInput = document.getElementById('sorting-column');
-//sortingColumnInput.selectedIndex
 
-//Sorting type
+//Sorting column input 
+const sortingColumnInput = document.getElementById('sorting-column');
+
+//Sorting type input
 const sortingTypeInput = document.getElementById('sorting-type');
-//sortingColumnInput.selectedIndex
 
 //Sorting button
 const sortingBtn = document.getElementById('sort-btn');

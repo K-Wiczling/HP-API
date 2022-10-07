@@ -1,6 +1,5 @@
 async function init () {
     initGlobal();
-    updateTable();
     initStorage();
     allStudents = await fetchStudents('all');
     const favorite = getFavorite();

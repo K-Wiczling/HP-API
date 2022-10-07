@@ -1,3 +1,5 @@
+# Karol Wiczling
+
 # Intro
 
 For this task, we will use a free API that provides Harry Potter data: https://hp-api.herokuapp.com/

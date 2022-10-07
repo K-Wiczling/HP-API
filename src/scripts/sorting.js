@@ -28,7 +28,6 @@ const compareBirth = (a, b) => {
             b = b.split('-');
             b = b.map(x => Number(x))
     }
-    // console.log('a: ' + a, 'b: ' + b);
     if ((a[2] - b[2]) !== 0){
         return a[2] - b[2];
     } else if ((a[1] - b[1]) !== 0){

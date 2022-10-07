@@ -1,4 +1,5 @@
 # Karol Wiczling
+Recruitment task - frontend intership
 
 # Intro
 

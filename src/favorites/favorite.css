@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 1fr 1fr ;
 }
 .card {
-    border: 1px solid black;
+    border: 2px solid var(--lighter);
     border-radius: 20px;
     width: 90%;
     height: 90%;
@@ -21,7 +21,10 @@
     margin-top: 10px;
     width: 70%;
     margin-left: 15%;
-    transition: width 0.4s;
+    transition: background-color 0.4s, width 0.4s;
+}
+.card-btn:hover {
+    width: 70%;
 }
 .card-image{
     border-radius: 15px;

@@ -15,9 +15,9 @@ const showSingleStudent = (name) => {
     const student = getSingleStudentObject(name);
     currentStudent = student;
     
-    modalName.innerHTML = `Name: ${student.name}`; 
-    modalBirth.innerHTML = `Date of birth: ${student.dateOfBirth}`;
-    modalhouse.innerHTML = `House: ${student.house}`;
+    modalName.innerHTML = student.name; 
+    modalBirth.innerHTML = student.dateOfBirth;
+    modalhouse.innerHTML = student.house;
     modalImg.src = student.image
 }
 

@@ -44,8 +44,10 @@ const createRow = (id, className, {name, dateOfBirth, house, wizard, ancestry, h
     return row;
 }
 
-// Create whole table
+// Reference to the tbody element
 const studentTableBody = document.getElementById('studentsTable');
+
+// Create whole table
 const createTable = (students) => {
     studentTableBody.innerHTML = '';
     students.map((student, index) => {

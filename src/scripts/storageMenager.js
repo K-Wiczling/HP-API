@@ -15,7 +15,6 @@ const updateFavorite = () => {
                 favorite +=  `;${student.name}`;
         });
     }
-
     localStorage.setItem("favorite", favorite);
 }
 
@@ -40,7 +39,8 @@ const initStorage = () => {
     if (loc === null || loc === undefined || loc === 'undefined')
         resetFavorite(); 
 }
+
+//Clear favorie item in the storage
 const resetFavorite = () => {
     localStorage.setItem("favorite", "")
-    
 }
